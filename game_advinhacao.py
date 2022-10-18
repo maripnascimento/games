@@ -1,56 +1,56 @@
 import random
 
-def jogar():
+def play():
 
     print("*********************************")
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
 
-    numero_secreto = random.randrange(1,101) 
-    total_de_tentativas = 0
-    rodada = 1
+    secret_number = random.randrange(1,101) 
+    total_attempt = 0
+    round = 1
 
     print("Qual o nível de dificuldade")
     print("(1) Fácil (2) Médio (3) Difícil")
 
-    nivel = int(input("Define o nível: "))
+    level = int(input("Define o nível: "))
 
-    if(nivel == 1):
-        total_de_tentativas = 20
-    elif(nivel == 2):
-        total_de_tentativas = 10
+    if(level == 1):
+        total_attempt = 20
+    elif(level == 2):
+        total_attempt = 10
     else:
-        total_de_tentativas = 5   
+        total_attempt = 5   
 
-    for rodada in range (1, total_de_tentativas +1):
-        print("Tentativa {} de {}".format(rodada, total_de_tentativas))
-        chute_str = input("Digite o seu número: ")
-        print("Você digitou " , chute_str)
-        chute = int(chute_str)
+    for round in range (1, total_attempt +1):
+        print("Tentativa {} de {}".format(round, total_attempt))
+        bet_str = input("Digite o seu número: ")
+        print("Você digitou " , bet_str)
+        bet = int(bet_str)
 
-        acertou = chute == numero_secreto
-        maior = chute > numero_secreto
-        menor = chute < numero_secreto
+        right = bet == secret_number
+        larger = bet > secret_number
+        smaller = bet < secret_number
 
-        if(chute < 1 or chute > 100):
+        if(bet < 1 or bet > 100):
             print("Você deve digitar um número entre 1 e 100")
             continue
 
-        if acertou:
+        if right:
             print("Parabéns! Você acertou!")
             break
         else:
-            if maior:
+            if larger:
                 print("O seu chute foi maior do que o número secreto!")
-            elif menor:
+            elif smaller:
                 print("O seu chute foi menor do que o número secreto!")
 
-        rodada = rodada + 1
+        round = round + 1
 
 
     print("Fim do jogo")
-    print("O número secreto era", numero_secreto)
+    print("O número secreto era", secret_number)
 
 if (__name__ == "__main__"):
-    jogar()
+    play()
 
