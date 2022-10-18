@@ -1,0 +1,9 @@
+banana
+uva
+laranja
+pera 
+melancia
+aviao
+pedra
+faca
+carro
